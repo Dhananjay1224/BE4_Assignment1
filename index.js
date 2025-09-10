@@ -105,9 +105,9 @@ async function readBookByYear (byYear) {
     }
 };
 
-app.get("/books/year/publishedyear", async (req,res) => {
+app.get("/books/year/:publishedyear", async (req,res) => {
     try {
-        const bookByYear = await readBookByYear(2012);
+        const bookByYear = await readBookByYear(req.params.publishedyear);
         if(bookByYear.length != 0) {
             res.json(bookByYear);
         } else {
