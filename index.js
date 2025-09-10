@@ -111,7 +111,7 @@ app.get("/books/year/:publishedyear", async (req,res) => {
         if(bookByYear.length != 0) {
             res.json(bookByYear);
         } else {
-            res.status(404).json({error: "Book not found of published year 2012."});
+            res.status(404).json({error: "Book not found of published year."});
         }
     }catch (error) {
         res.status(500).json({error: "Failed to fetch book by pubishedYear."})
